@@ -83,4 +83,30 @@ paths:
       summary: "Retrieve real-time Kalman state for BiologicsColdPallet"
       parameters:
         - name: "facility_node_id"
-        
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "window_size"
+          in: "query"
+          required: false
+          schema:
+            type: "integer"
+            default: 64
+      responses:
+        "200":
+          description: "Deterministic state vector for BiologicsColdPallet"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BiologicsColdPalletResponse"
+    post:
+      operationId: "ingestBiologicsColdPalletFrame"
+      summary: "Ingest high-rate sensor frame for BiologicsColdPallet"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BiologicsColdPalletFrameRequest"
+              
