@@ -104,4 +104,19 @@ spec:
               value: "-21.8"
             - name: "NOMINAL_TOLERANCE"
               value: "0.25"
-              
+            - name: "PRIMARY_METRIC_NAME"
+              value: "remaining_shelf_life_hrs"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "2000m"
+              memory: "2048Mi"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "nh3-co2-cascade-evap-worker"
+  namespace: "automated-ColdChain-asrs-agv-wcs-prod"
+  
