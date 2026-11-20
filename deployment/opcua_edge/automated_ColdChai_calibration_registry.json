@@ -1,0 +1,15 @@
+{
+  "name": "@automated-ColdChain-asrs-agv-wcs/enterprise-workbench",
+  "version": "2026.4.0",
+  "private": true,
+  "description": "Automated Cold-Chain ASRS Crane Kinematics, Time-Expanded MAPF A",
+  "standard": "FEM-9851-ASRS-GDP-COLDCHAIN-2026",
+  "organization": "Central European Intralogistics Robotics & Cold-Storage WCS Engineering",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  
