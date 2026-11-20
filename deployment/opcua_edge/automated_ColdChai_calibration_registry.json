@@ -78,7 +78,6 @@
         0.88,
         0.82,
         0.76
-        
       ],
       "redundant_voter_quorum": "2_OF_3_BYZANTINE"
     },
@@ -95,4 +94,25 @@
       "law_coefficient": 1.85,
       "kalman_process_noise_q": 0.01,
       "kalman_measurement_noise_r": 0.255,
+      "mahalanobis_warning_sigma": 3.0,
+      "mahalanobis_scram_sigma": 6.0,
+      "harmonic_rejection_poles": [
+        0.94,
+        0.88,
+        0.82,
+        0.76
+      ],
+      "redundant_voter_quorum": "2_OF_3_BYZANTINE"
+    },
+    {
+      "subsystem_index": 4,
+      "subsystem_slug": "nh3_co2_cascade_evap",
+      "subsystem_class": "AmmoniaCascadeChiller",
+      "primary_metric": "suction_superheat_k",
+      "secondary_metric": "cop_carnot_efficiency",
+      "nominal_setpoint": 2.85,
+      "tolerance_band": 0.04,
+      "governing_law": "ColdDoorPsychrometricLoad",
+      "governing_equation": "Q_inf = 0.221 * A_door * (h_inf - h_cold) * rho_cold * (1 - rho_",
+      "law_coefficient": 14.2,
       
