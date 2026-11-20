@@ -65,4 +65,34 @@
       "primary_metric": "conflict_tree_expansions",
       "secondary_metric": "makespan_optimality_gap",
       "nominal_setpoint": 1.04,
+      "tolerance_band": 0.01,
+      "governing_law": "ArrheniusShelfLifeDecay",
+      "governing_equation": "k_deg(T) = A_pre * exp(-E_activation / (R_gas * T_Kelvin))",
+      "law_coefficient": 0.0024,
+      "kalman_process_noise_q": 0.0004,
+      "kalman_measurement_noise_r": 0.0102,
+      "mahalanobis_warning_sigma": 3.0,
+      "mahalanobis_scram_sigma": 6.0,
+      "harmonic_rejection_poles": [
+        0.94,
+        0.88,
+        0.82,
+        0.76
+        
+      ],
+      "redundant_voter_quorum": "2_OF_3_BYZANTINE"
+    },
+    {
+      "subsystem_index": 3,
+      "subsystem_slug": "arrhenius_fefo_pallet",
+      "subsystem_class": "BiologicsColdPallet",
+      "primary_metric": "remaining_shelf_life_hrs",
+      "secondary_metric": "mean_kinetic_temp_c",
+      "nominal_setpoint": -21.8,
+      "tolerance_band": 0.25,
+      "governing_law": "SevenSegmentSCurveJerk",
+      "governing_equation": "x(t) = x_0 + v_0*t + 0.5*a_0*t^2 + (1/6)*J_max*t^3",
+      "law_coefficient": 1.85,
+      "kalman_process_noise_q": 0.01,
+      "kalman_measurement_noise_r": 0.255,
       
