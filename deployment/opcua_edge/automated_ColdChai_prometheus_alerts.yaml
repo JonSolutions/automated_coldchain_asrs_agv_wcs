@@ -31,4 +31,26 @@ groups:
     interval: "5s"
     rules:
       - record: "facility:cbs_mapf_agv_grid_conflict_tree_expansions:mean5m"
-      
+        expr: "avg_over_time(automated_Cold_cbs_mapf_agv_grid_conflict_tree_expansions[5m])"
+        labels:
+          subsystem: "TimeExpandedVertexGraph"
+          standard: "FEM-9851-ASRS-GDP-COLDCHAIN-2026"
+      - alert: "TimeExpandedVertexGraphMahalanobisExcursionHigh"
+        expr: "automated_Cold_cbs_mapf_agv_grid_mahalanobis_score > 3.5"
+        for: "15s"
+        labels:
+          severity: "warning"
+          subsystem: "TimeExpandedVertexGraph"
+        annotations:
+          summary: "TimeExpandedVertexGraph anomaly score exceeded 3.5 sigma"
+          description: "Metric conflict_tree_expansions drifted from baseline 1.04 (tol 0.01)."
+      - alert: "TimeExpandedVertexGraphSafetyInterlockLatched"
+        expr: "automated_Cold_cbs_mapf_agv_grid_interlock_latched == 1"
+        for: "1s"
+        labels:
+          severity: "critical"
+          subsystem: "TimeExpandedVertexGraph"
+        annotations:
+          summary: "CRITICAL: TimeExpandedVertexGraph safety interlock tripped"
+          description: "Immediate closed-loop damping actuated on cbs_mapf_agv_grid."
+          
