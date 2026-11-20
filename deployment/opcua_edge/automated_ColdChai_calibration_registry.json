@@ -33,10 +33,28 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "jsx": "preserve"
-},
+  },
   "domainCalibrationRegistry": [
     {
       "subsystem_index": 1,
       "subsystem_slug": "s_curve_stacker_crane",
       "subsystem_class": "TwinMastStackerCrane",
+      "primary_metric": "jerk_limited_cycle_sec",
+      "secondary_metric": "mast_sway_amplitude_mm",
+      "nominal_setpoint": 28.4,
+      "tolerance_band": 0.35,
+      "governing_law": "BozerWhiteDualCommandCycle",
+      "governing_equation": "E[T_DC] = (4/3)*t_max + (1/2)*t_max*(s_shape^2) + 4*t_pickup_dep",
+      "law_coefficient": 42.5,
+      "kalman_process_noise_q": 0.014,
+      "kalman_measurement_noise_r": 0.357,
+      "mahalanobis_warning_sigma": 3.0,
+      "mahalanobis_scram_sigma": 6.0,
+      "harmonic_rejection_poles": [
+        0.94,
+        0.88,
+        0.82,
+        0.76
+      ],
+      "redundant_voter_quorum": "2_OF_3_BYZANTINE"
       
