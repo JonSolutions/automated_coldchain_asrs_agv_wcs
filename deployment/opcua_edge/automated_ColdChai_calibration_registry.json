@@ -57,4 +57,12 @@
         0.76
       ],
       "redundant_voter_quorum": "2_OF_3_BYZANTINE"
+    },
+    {
+      "subsystem_index": 2,
+      "subsystem_slug": "cbs_mapf_agv_grid",
+      "subsystem_class": "TimeExpandedVertexGraph",
+      "primary_metric": "conflict_tree_expansions",
+      "secondary_metric": "makespan_optimality_gap",
+      "nominal_setpoint": 1.04,
       
