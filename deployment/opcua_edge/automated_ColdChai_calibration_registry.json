@@ -115,4 +115,38 @@
       "governing_law": "ColdDoorPsychrometricLoad",
       "governing_equation": "Q_inf = 0.221 * A_door * (h_inf - h_cold) * rho_cold * (1 - rho_",
       "law_coefficient": 14.2,
+      "kalman_process_noise_q": 0.0016,
+      "kalman_measurement_noise_r": 0.0408,
+      "mahalanobis_warning_sigma": 3.0,
+      "mahalanobis_scram_sigma": 6.0,
+      "harmonic_rejection_poles": [
+        0.94,
+        0.88,
+        0.82,
+        0.76
+      ],
+      "redundant_voter_quorum": "2_OF_3_BYZANTINE"
+    },
+    {
+      "subsystem_index": 5,
+      "subsystem_slug": "high_speed_airlock_door",
+      "subsystem_class": "VestibuleDehumidifier",
+      "primary_metric": "infiltration_latent_kw",
+      "secondary_metric": "frost_buildup_mm",
+      "nominal_setpoint": 1.25,
+      "tolerance_band": 0.03,
+      "governing_law": "BozerWhiteDualCommandCycle",
+      "governing_equation": "E[T_DC] = (4/3)*t_max + (1/2)*t_max*(s_shape^2) + 4*t_pickup_dep",
+      "law_coefficient": 42.5,
+      "kalman_process_noise_q": 0.0012,
+      "kalman_measurement_noise_r": 0.0306,
+      "mahalanobis_warning_sigma": 3.0,
+      "mahalanobis_scram_sigma": 6.0,
+      "harmonic_rejection_poles": [
+        0.94,
+        0.88,
+        0.82,
+        0.76
+      ],
+      "redundant_voter_quorum": "2_OF_3_BYZANTINE"
       

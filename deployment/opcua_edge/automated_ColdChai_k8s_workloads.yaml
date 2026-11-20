@@ -57,4 +57,30 @@ spec:
       labels:
         app: "cbs-mapf-agv-grid-worker"
         subsystem: "TimeExpandedVertexGraph"
-        
+    spec:
+      containers:
+        - name: "cbs-mapf-agv-grid-worker"
+          image: "registry.local/automated_ColdCh/cbs-mapf-agv-grid-worker:2026.4"
+          ports:
+            - containerPort: 8102
+          env:
+            - name: "NOMINAL_SETPOINT"
+              value: "1.04"
+            - name: "NOMINAL_TOLERANCE"
+              value: "0.01"
+            - name: "PRIMARY_METRIC_NAME"
+              value: "conflict_tree_expansions"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+              
+            limits:
+              cpu: "2000m"
+              memory: "2048Mi"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "arrhenius-fefo-pallet-worker"
+  
