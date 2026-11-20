@@ -119,4 +119,16 @@ kind: Deployment
 metadata:
   name: "nh3-co2-cascade-evap-worker"
   namespace: "automated-ColdChain-asrs-agv-wcs-prod"
-  
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "nh3-co2-cascade-evap-worker"
+  template:
+    metadata:
+      labels:
+        app: "nh3-co2-cascade-evap-worker"
+        subsystem: "AmmoniaCascadeChiller"
+    spec:
+      containers:
+      
