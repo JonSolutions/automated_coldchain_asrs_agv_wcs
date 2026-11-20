@@ -1,0 +1,34 @@
+# Prometheus Alerting Rules: Automated Cold-Chain ASRS Crane Kinematics, Time-Expanded MAPF A
+# Standard: FEM-9851-ASRS-GDP-COLDCHAIN-2026
+groups:
+  - name: "automated_ColdChain_asrs_agv_wcs_s_curve_stacker_crane_rules"
+    interval: "5s"
+    rules:
+      - record: "facility:s_curve_stacker_crane_jerk_limited_cycle_sec:mean5m"
+        expr: "avg_over_time(automated_Cold_s_curve_stacker_crane_jerk_limited_cycle_sec[5m])"
+        labels:
+          subsystem: "TwinMastStackerCrane"
+          standard: "FEM-9851-ASRS-GDP-COLDCHAIN-2026"
+      - alert: "TwinMastStackerCraneMahalanobisExcursionHigh"
+        expr: "automated_Cold_s_curve_stacker_crane_mahalanobis_score > 3.5"
+        for: "15s"
+        labels:
+          severity: "warning"
+          subsystem: "TwinMastStackerCrane"
+        annotations:
+          summary: "TwinMastStackerCrane anomaly score exceeded 3.5 sigma"
+          description: "Metric jerk_limited_cycle_sec drifted from baseline 28.4 (tol 0.35)."
+      - alert: "TwinMastStackerCraneSafetyInterlockLatched"
+        expr: "automated_Cold_s_curve_stacker_crane_interlock_latched == 1"
+        for: "1s"
+        labels:
+          severity: "critical"
+          subsystem: "TwinMastStackerCrane"
+        annotations:
+          summary: "CRITICAL: TwinMastStackerCrane safety interlock tripped"
+          description: "Immediate closed-loop damping actuated on s_curve_stacker_crane."
+  - name: "automated_ColdChain_asrs_agv_wcs_cbs_mapf_agv_grid_rules"
+    interval: "5s"
+    rules:
+      - record: "facility:cbs_mapf_agv_grid_conflict_tree_expansions:mean5m"
+      
