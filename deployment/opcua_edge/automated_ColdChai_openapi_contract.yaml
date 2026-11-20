@@ -1,0 +1,20 @@
+openapi: "3.1.0"
+info:
+  title: "Automated Cold-Chain ASRS Crane Kinematics, Time-Expanded MAPF A API"
+  version: "2026.4.0"
+  description: "Enterprise specification compliant with FEM-9851-ASRS-GDP-COLDCHAIN-2026."
+servers:
+  - url: "https://telemetry.internal.facility.local/api/v1"
+    description: "Primary Closed-Loop Control Cluster"
+paths:
+  /subsystems/s_curve_stacker_crane/telemetry:
+    get:
+      operationId: "getTwinMastStackerCraneTelemetrySnapshot"
+      summary: "Retrieve real-time Kalman state for TwinMastStackerCrane"
+      parameters:
+        - name: "facility_node_id"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+            

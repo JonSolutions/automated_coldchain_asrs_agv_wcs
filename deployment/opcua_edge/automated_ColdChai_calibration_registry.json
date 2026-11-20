@@ -12,4 +12,31 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
-  
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "tailwindcss": "3.4.14"
+  },
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "strict": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve"
+},
+  "domainCalibrationRegistry": [
+    {
+      "subsystem_index": 1,
+      "subsystem_slug": "s_curve_stacker_crane",
+      "subsystem_class": "TwinMastStackerCrane",
+      
