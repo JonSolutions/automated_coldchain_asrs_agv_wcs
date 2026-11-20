@@ -1,0 +1,23 @@
+# Kubernetes Topology: Automated Cold-Chain ASRS Crane Kinematics, Time-Expanded MAPF A
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "automated-ColdChain-asrs-agv-wcs-prod"
+  labels:
+    standard: "FEM-9851-ASRS-GDP-COLDCHAIN-2026"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "s-curve-stacker-crane-worker"
+  namespace: "automated-ColdChain-asrs-agv-wcs-prod"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "s-curve-stacker-crane-worker"
+  template:
+    metadata:
+      labels:
+        app: "s-curve-stacker-crane-worker"
+        
