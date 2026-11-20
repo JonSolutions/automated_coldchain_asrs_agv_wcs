@@ -74,7 +74,6 @@ spec:
             requests:
               cpu: "500m"
               memory: "512Mi"
-              
             limits:
               cpu: "2000m"
               memory: "2048Mi"
@@ -83,4 +82,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "arrhenius-fefo-pallet-worker"
-  
+  namespace: "automated-ColdChain-asrs-agv-wcs-prod"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "arrhenius-fefo-pallet-worker"
+  template:
+    metadata:
+      labels:
+        app: "arrhenius-fefo-pallet-worker"
+        subsystem: "BiologicsColdPallet"
+    spec:
+      containers:
+        - name: "arrhenius-fefo-pallet-worker"
+        
