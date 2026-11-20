@@ -96,4 +96,12 @@ spec:
     spec:
       containers:
         - name: "arrhenius-fefo-pallet-worker"
-        
+          image: "registry.local/automated_ColdCh/arrhenius-fefo-pallet-worker:2026.4"
+          ports:
+            - containerPort: 8103
+          env:
+            - name: "NOMINAL_SETPOINT"
+              value: "-21.8"
+            - name: "NOMINAL_TOLERANCE"
+              value: "0.25"
+              
