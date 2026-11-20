@@ -20,4 +20,13 @@ spec:
     metadata:
       labels:
         app: "s-curve-stacker-crane-worker"
-        
+        subsystem: "TwinMastStackerCrane"
+    spec:
+      containers:
+        - name: "s-curve-stacker-crane-worker"
+          image: "registry.local/automated_ColdCh/s-curve-stacker-crane-worker:2026.4"
+          ports:
+            
+          env:
+            - name: "NOMINAL_SETPOINT"
+            
