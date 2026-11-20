@@ -52,4 +52,9 @@ spec:
   selector:
     matchLabels:
       app: "cbs-mapf-agv-grid-worker"
-      
+  template:
+    metadata:
+      labels:
+        app: "cbs-mapf-agv-grid-worker"
+        subsystem: "TimeExpandedVertexGraph"
+        
