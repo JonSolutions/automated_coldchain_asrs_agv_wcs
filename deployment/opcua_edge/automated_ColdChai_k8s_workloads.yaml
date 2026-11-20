@@ -26,7 +26,30 @@ spec:
         - name: "s-curve-stacker-crane-worker"
           image: "registry.local/automated_ColdCh/s-curve-stacker-crane-worker:2026.4"
           ports:
-            
+            - containerPort: 8101
           env:
             - name: "NOMINAL_SETPOINT"
-            
+              value: "28.4"
+            - name: "NOMINAL_TOLERANCE"
+              value: "0.35"
+            - name: "PRIMARY_METRIC_NAME"
+              value: "jerk_limited_cycle_sec"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "2000m"
+              memory: "2048Mi"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "cbs-mapf-agv-grid-worker"
+  namespace: "automated-ColdChain-asrs-agv-wcs-prod"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "cbs-mapf-agv-grid-worker"
+      
