@@ -218,3 +218,8 @@
         0.76
       ],
       "redundant_voter_quorum": "2_OF_3_BYZANTINE"
+    },
+    {
+      "subsystem_index": 9,
+      "subsystem_slug": "pallet_profilometer",
+      "subsystem_class": "LaserContourGateScanner",
