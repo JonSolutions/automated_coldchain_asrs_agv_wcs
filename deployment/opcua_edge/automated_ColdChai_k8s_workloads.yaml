@@ -135,3 +135,19 @@ spec:
           image: "registry.local/automated_ColdCh/nh3-co2-cascade-evap-worker:2026.4"
           ports:
             - containerPort: 8104
+          env:
+            - name: "NOMINAL_SETPOINT"
+              value: "2.85"
+            - name: "NOMINAL_TOLERANCE"
+              value: "0.04"
+            - name: "PRIMARY_METRIC_NAME"
+              value: "suction_superheat_k"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "2000m"
+              memory: "2048Mi"
+---
+apiVersion: apps/v1
