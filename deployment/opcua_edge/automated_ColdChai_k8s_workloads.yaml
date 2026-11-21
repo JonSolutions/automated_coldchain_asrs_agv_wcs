@@ -131,4 +131,7 @@ spec:
         subsystem: "AmmoniaCascadeChiller"
     spec:
       containers:
-      
+        - name: "nh3-co2-cascade-evap-worker"
+          image: "registry.local/automated_ColdCh/nh3-co2-cascade-evap-worker:2026.4"
+          ports:
+            - containerPort: 8104
