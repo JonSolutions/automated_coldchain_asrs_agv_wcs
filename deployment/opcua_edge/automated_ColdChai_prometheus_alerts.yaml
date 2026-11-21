@@ -87,3 +87,4 @@ groups:
         labels:
           subsystem: "AmmoniaCascadeChiller"
           standard: "FEM-9851-ASRS-GDP-COLDCHAIN-2026"
+      - alert: "AmmoniaCascadeChillerMahalanobisExcursionHigh"
