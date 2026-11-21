@@ -69,3 +69,14 @@ groups:
           subsystem: "BiologicsColdPallet"
         annotations:
           summary: "BiologicsColdPallet anomaly score exceeded 3.5 sigma"
+          description: "Metric remaining_shelf_life_hrs drifted from baseline -21.8 (tol 0.25)."
+      - alert: "BiologicsColdPalletSafetyInterlockLatched"
+        expr: "automated_Cold_arrhenius_fefo_pallet_interlock_latched == 1"
+        for: "1s"
+        labels:
+          severity: "critical"
+          subsystem: "BiologicsColdPallet"
+        annotations:
+          summary: "CRITICAL: BiologicsColdPallet safety interlock tripped"
+          description: "Immediate closed-loop damping actuated on arrhenius_fefo_pallet."
+  - name: "automated_ColdChain_asrs_agv_wcs_nh3_co2_cascade_evap_rules"
