@@ -80,3 +80,7 @@ groups:
           summary: "CRITICAL: BiologicsColdPallet safety interlock tripped"
           description: "Immediate closed-loop damping actuated on arrhenius_fefo_pallet."
   - name: "automated_ColdChain_asrs_agv_wcs_nh3_co2_cascade_evap_rules"
+    interval: "5s"
+    rules:
+      - record: "facility:nh3_co2_cascade_evap_suction_superheat_k:mean5m"
+        expr: "avg_over_time(automated_Cold_nh3_co2_cascade_evap_suction_superheat_k[5m])"
