@@ -170,3 +170,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/VestibuleDehumidifierResponse"
+    post:
+      operationId: "ingestVestibuleDehumidifierFrame"
+      summary: "Ingest high-rate sensor frame for VestibuleDehumidifier"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VestibuleDehumidifierFrameRequest"
