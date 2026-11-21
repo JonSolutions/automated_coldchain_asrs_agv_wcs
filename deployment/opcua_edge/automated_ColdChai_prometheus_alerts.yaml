@@ -84,3 +84,6 @@ groups:
     rules:
       - record: "facility:nh3_co2_cascade_evap_suction_superheat_k:mean5m"
         expr: "avg_over_time(automated_Cold_nh3_co2_cascade_evap_suction_superheat_k[5m])"
+        labels:
+          subsystem: "AmmoniaCascadeChiller"
+          standard: "FEM-9851-ASRS-GDP-COLDCHAIN-2026"
