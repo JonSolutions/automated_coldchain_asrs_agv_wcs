@@ -67,3 +67,5 @@ groups:
         labels:
           severity: "warning"
           subsystem: "BiologicsColdPallet"
+        annotations:
+          summary: "BiologicsColdPallet anomaly score exceeded 3.5 sigma"
