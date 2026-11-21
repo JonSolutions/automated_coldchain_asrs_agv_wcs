@@ -179,3 +179,7 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/VestibuleDehumidifierFrameRequest"
+      responses:
+        "202":
+          description: "Frame accepted into EKF solver pipeline"
+  /subsystems/shuttle_mother_baby/telemetry:
