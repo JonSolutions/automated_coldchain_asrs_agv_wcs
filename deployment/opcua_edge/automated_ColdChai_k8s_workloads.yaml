@@ -178,3 +178,6 @@ spec:
               value: "0.03"
             - name: "PRIMARY_METRIC_NAME"
               value: "infiltration_latent_kw"
+          resources:
+            requests:
+              cpu: "500m"
