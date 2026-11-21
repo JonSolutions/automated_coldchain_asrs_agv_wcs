@@ -173,3 +173,5 @@ spec:
             - containerPort: 8105
           env:
             - name: "NOMINAL_SETPOINT"
+              value: "1.25"
+            - name: "NOMINAL_TOLERANCE"
