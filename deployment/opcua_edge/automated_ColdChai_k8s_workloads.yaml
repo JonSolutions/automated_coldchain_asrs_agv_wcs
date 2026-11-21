@@ -175,3 +175,6 @@ spec:
             - name: "NOMINAL_SETPOINT"
               value: "1.25"
             - name: "NOMINAL_TOLERANCE"
+              value: "0.03"
+            - name: "PRIMARY_METRIC_NAME"
+              value: "infiltration_latent_kw"
