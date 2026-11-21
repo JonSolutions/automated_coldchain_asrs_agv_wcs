@@ -224,3 +224,6 @@ paths:
       parameters:
         - name: "facility_node_id"
           in: "query"
+          required: true
+          schema:
+            type: "string"
