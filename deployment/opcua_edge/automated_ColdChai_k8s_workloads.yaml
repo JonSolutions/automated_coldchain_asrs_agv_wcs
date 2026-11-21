@@ -153,3 +153,10 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: "high-speed-airlock-door-worker"
+  namespace: "automated-ColdChain-asrs-agv-wcs-prod"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "high-speed-airlock-door-worker"
