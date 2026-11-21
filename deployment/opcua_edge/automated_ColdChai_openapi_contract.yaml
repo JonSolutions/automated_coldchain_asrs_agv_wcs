@@ -125,4 +125,48 @@ paths:
         - name: "window_size"
           in: "query"
           required: false
-          
+          schema:
+            type: "integer"
+            default: 64
+      responses:
+        "200":
+          description: "Deterministic state vector for AmmoniaCascadeChiller"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AmmoniaCascadeChillerResponse"
+    post:
+      operationId: "ingestAmmoniaCascadeChillerFrame"
+      summary: "Ingest high-rate sensor frame for AmmoniaCascadeChiller"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AmmoniaCascadeChillerFrameRequest"
+      responses:
+        "202":
+          description: "Frame accepted into EKF solver pipeline"
+  /subsystems/high_speed_airlock_door/telemetry:
+    get:
+      operationId: "getVestibuleDehumidifierTelemetrySnapshot"
+      summary: "Retrieve real-time Kalman state for VestibuleDehumidifier"
+      parameters:
+        - name: "facility_node_id"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "window_size"
+          in: "query"
+          required: false
+          schema:
+            type: "integer"
+            default: 64
+      responses:
+        "200":
+          description: "Deterministic state vector for VestibuleDehumidifier"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VestibuleDehumidifierResponse"
