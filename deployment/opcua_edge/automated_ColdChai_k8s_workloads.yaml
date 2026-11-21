@@ -160,3 +160,12 @@ spec:
   selector:
     matchLabels:
       app: "high-speed-airlock-door-worker"
+  template:
+    metadata:
+      labels:
+        app: "high-speed-airlock-door-worker"
+        subsystem: "VestibuleDehumidifier"
+    spec:
+      containers:
+        - name: "high-speed-airlock-door-worker"
+          image: "registry.local/automated_ColdCh/high-speed-airlock-door-worker:2026.4"
