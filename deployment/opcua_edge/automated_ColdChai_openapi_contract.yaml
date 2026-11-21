@@ -198,3 +198,10 @@ paths:
           schema:
             type: "integer"
             default: 64
+      responses:
+        "200":
+          description: "Deterministic state vector for DeepLaneShuttleCarrier"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeepLaneShuttleCarrierResponse"
