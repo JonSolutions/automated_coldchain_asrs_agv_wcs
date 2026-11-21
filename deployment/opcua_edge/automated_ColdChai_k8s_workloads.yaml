@@ -151,3 +151,4 @@ spec:
               memory: "2048Mi"
 ---
 apiVersion: apps/v1
+kind: Deployment
