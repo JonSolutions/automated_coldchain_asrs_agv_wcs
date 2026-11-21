@@ -169,3 +169,7 @@ spec:
       containers:
         - name: "high-speed-airlock-door-worker"
           image: "registry.local/automated_ColdCh/high-speed-airlock-door-worker:2026.4"
+          ports:
+            - containerPort: 8105
+          env:
+            - name: "NOMINAL_SETPOINT"
